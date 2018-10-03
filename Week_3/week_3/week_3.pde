@@ -59,10 +59,10 @@ void draw() {
 // }
  
 background(bgColor);
-  if(xSpeed ==ySpeed) {
-    xSpeed = int(random(1,9));
-    ySpeed = int(random(1,7)); 
-  }
+  //if(xSpeed ==ySpeed) {
+  //  xSpeed = int(random(1,9));
+  //  ySpeed = int(random(1,7)); 
+  //}
   fill(color(random(0,255), random(0,255), random(0,255))); 
   ellipse(x, y, size, size);
   if(x>(width-size/2) || x<size/2){
