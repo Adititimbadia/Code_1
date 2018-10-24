@@ -30,13 +30,14 @@ void draw(){
       if(mouseX >= (i*num) && mouseX<((i+1)*num) && 
       mouseY >= (j*num) && mouseY <((j+1)*num)){
         opacity[i][j] = 0; 
-      }else{
-        opacity[i][j] = 255; 
-      }
-      
-      //if(opacity[i][j]<255){
-      //  opacity[i][j] ++; 
+      }else
+      //{
+      //  opacity[i][j] = 255; 
       //}
+      
+      if(opacity[i][j]<255){
+        opacity[i][j] ++; 
+      }
     }
   }
 }

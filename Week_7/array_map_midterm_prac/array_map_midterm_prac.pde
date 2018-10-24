@@ -23,6 +23,7 @@ void draw(){
        float dist = dist(mouseX, mouseY, xPos[i], height/2);
        if(mousePressed && dist < size/2){
     background(bgColor[i]); 
+    println(bgColor[i]); 
        }
   }
  
