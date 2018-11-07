@@ -1,5 +1,5 @@
 float d = 100;
-float b = 600; 
+//float b = 600; 
 float incr = 5;
 
 boolean shrink; 
@@ -11,17 +11,35 @@ void setup() {
 void draw() {
   background(150);
 
-  if(d <= width && d <= height){
+  if(d > width){
+    shrink = true;
+  }
+  
+  if(shrink == true){
+  d -= incr;
+}
+
+  if(d < 0){
+    shrink = false;
+  }
+  
+  if(shrink == false){
     d += incr;
   }
+  
+  println(shrink);
+  
+  
+  
+
   //} else{
   // d -= incr;
   //}
   
-  if(shrink = false){
+  //if(shrink = false){
     
-    d += incr;
-  }
+  //  d += incr;
+  //}
   
   ellipse(width/2, height/2, d, d);
   

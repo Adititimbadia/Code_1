@@ -1,5 +1,5 @@
-int gridW = 50;
-int gridH = 50;
+int gridW = 10;
+int gridH = 10;
 float[][] greyColors = new float[gridW][gridH];
 
 void setup() {
@@ -22,7 +22,7 @@ void draw() {
         greyColors[i][j]+=1;
       }
       fill(greyColors[i][j]);
-      rect(i*gridW, j*gridH, width, height);
+      rect(i*width/gridW, j*height/gridH, width, height);
     }
     }
     }
