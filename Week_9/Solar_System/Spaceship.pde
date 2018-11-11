@@ -3,7 +3,7 @@ class Spaceship{
   int xPos; 
   int yPos;
   color shipColor; 
-  int numDots;
+  //int numDots;
   
   Spaceship(int _shipSize, int _xPos,int _yPos){
    shipSize = _shipSize;
@@ -15,7 +15,8 @@ class Spaceship{
   void display(int _shipColor){
     fill(50, 100, 150); 
     ellipse(xPos, yPos - (shipSize/3), shipSize/2, shipSize/5); 
-   fill(_shipColor);
+    shipColor = _shipColor; 
+    fill(shipColor);
     ellipse(xPos, yPos, shipSize, shipSize/1.5);
     
     //for(int i=0; i<numDots; i++){
