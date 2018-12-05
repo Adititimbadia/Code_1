@@ -1,36 +1,38 @@
-//Particle myParticle; 
+ArrayList <Particle> particles = new ArrayList<Particle>();
 
-ArrayList <Particle> particles; 
+int frame =0;
 
 void setup(){
   size(600, 600); 
-  
-  myParticle = new Particle(width/2, height/2); 
-  particles = new ArrayList<Particle>(); 
-  for( int i=0; i<10; i++){
-  particles.add(new Particle()); 
-  }
 }
 
 void draw(){
   background(0); 
-  
-  for(int i= 0; i<particles.size(); i++) {
-    Particle p = particles.get(i); 
-  p[i].move();
-  p[i].bounce(); 
-  p[i].display(); 
+  if(frame ==30){
+    particles.add(new Particle(width/2, height/2)); 
+    frame = 0; 
   }
   
-  //to check to see if a particle is still alive, can use .dead() method
-  println(myParticle.dead()); 
+  int deadParticle;
+  for(int i=0; i<particles.size(); i++){
+    Particle p = particles.get(i);
+    p.move();
+    p.bounce();
+    p.display();
+    if (p.dead()){
+      particles.remove(p);
+    }
+    
+  }
+  
+  println(particles.size()); 
+  frame++;
 }
 
 class Particle{
   PVector pos; 
   PVector vel; 
   float size; 
-  float x, y; 
   
   int opacity = 255; 
   
